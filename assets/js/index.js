@@ -36,6 +36,7 @@ function calcular(idinput) {
 
     if (document.getElementById("inputPrecio" + idinput).value == "") {
         document.getElementById("error-inputPrecio"+idinput).removeAttribute("hidden");
+        showAlert("El precio ingresado es incorrecto, ingresa una cantidad v&aacute;lida");
     } else {
         document.getElementById("error-inputPrecio"+idinput).setAttribute("hidden", "");
         precio = 0;
@@ -43,6 +44,7 @@ function calcular(idinput) {
 
     if (document.getElementById("inputCantidad" + idinput).value == "") {
         document.getElementById("error-inputCantidad"+idinput).removeAttribute("hidden");
+        showAlert("El valor ingresado es incorrecto, ingresa una cantidad v&aacute;lida");
     } else {
         document.getElementById("error-inputCantidad"+idinput).setAttribute("hidden", "");
         cantidad = 0;
