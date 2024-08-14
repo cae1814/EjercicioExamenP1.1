@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/index.css">
+  <link rel="stylesheet" href="/assets/js/alertifyjs/css/alertify.min.css">
+  <link rel="stylesheet" href="/assets/js/alertifyjs/css/themes/default.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="icon" href="assets/img/favicon.ico" />
+
+  <title>T1201 PROGRAMACIÓN WEB I</title>
+</head>
+
+<body>
+  <section class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <nav class="navbar bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand">T1201 PROGRAMACIÓN WEB I 2024Q3</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ejercicio Examen -->
+  <section class="container mt-2 ">
+    <div class="card">
+      <div class="card-header" style="background-color: green; color: white;">
+        EjercicioExamenP1.1 | C&aacute;lculo de Precios para Productos
+      </div>
+      <div class="card-body">
+        <div class="row g-3 align-items-center row collapse_9 multi-collapse_9" id="divarticulos">
+          <form>
+            <fieldset>
+              <legend>Listado de Productos</legend>
+              <div class="container text-center">
+                <div class="row align-items-start">
+                  <div class="col text-start">
+                    <b>Nombre</b>
+                    <select id="select1" class="form-select" aria-label="Default select example">
+                      <option value="1" selected>Producto 1</option>
+                      <option value="2">Producto 2</option>
+                      <option value="3">Producto 3</option>
+                      <option value="4">Producto 4</option>
+                      <option value="5">Producto 4</option>
+                    </select>
+                  </div>
+                  <div class="col text-center">
+                    <b>Precio</b>
+                    <input type="number" id="inputPrecio1" class="form-control text-right" value="0" min="0" onchange="calcular(1)" aria-describedby="inputPrecio11Help">
+                    <span id="error-inputPrecio1" class="error" hidden>Debe de ingresar un numero válido</span>
+                  </div>
+                  <div class="col text-center">
+                    <b>Cantidad</b>
+                    <input type="number" id="inputCantidad1" class="form-control text-right" value="1" min="1" onchange="calcular(1)" aria-describedby="inputCantidad1Help">
+                    <span id="error-inputCantidad1" class="error" hidden>Debe de ingresar un numero válido</span>
+                  </div>
+                  <div class="col text-center">
+                   <b>Totales</b>
+                    <input disabled type="text" id="inputSubTotal1" class="form-control text-right" value="0" aria-describedby="inputSubTotal1Help">
+                  </div>
+                </div>
+                <div class="row align-items-start mt-2">
+                  <div class="col text-align">
+                    <select id=""select2 class="form-select" aria-label="Default select example">
+                      <option value="1">Producto 1</option>
+                      <option value="2" selected>Producto 2</option>
+                      <option value="3">Producto 3</option>
+                      <option value="4">Producto 4</option>
+                      <option value="5">Producto 5</option>
+                    </select>
+                  </div>
+                  <div class="col text-align">
+                    <input type="number" id="inputPrecio2" class="form-control text-right" value="0" onchange="calcular(2)" aria-describedby="inputPrecio2Help">
+                    <span id="error-inputPrecio2" class="error" hidden>Debe de ingresar un numero válido</span>
+                  </div>
+                  <div class="col text-center">
+                    <input type="number" id="inputCantidad2" class="form-control text-right" value="1" min="1" onchange="calcular(2)" aria-describedby="inputCantidad2Help">
+                    <span id="error-inputCantidad2" class="error" hidden>Debe de ingresar un numero válido</span>
+                  </div>
+                  <div class="col text-align">
+                    <input disabled type="text" id="inputSubTotal2" class="form-control text-right" value="0" aria-describedby="inputSubTotal2Help">
+                  </div>
+                </div>
+                <div class="row align-items-start mt-2">
+                  <div class="col text-align">
+                    <select id=""select3 class="form-select" aria-label="Default select example">
+                      <option value="1">Producto 1</option>
+                      <option value="2">Producto 2</option>
+                      <option value="3" selected>Producto 3</option>
+                      <option value="4">Producto 4</option>
+                      <option value="5">Producto 5</option>
+                    </select>
+                  </div>
+                  <div class="col text-align">
+                    <input type="number" id="inputPrecio3" class="form-control text-right" value="0" onchange="calcular(3)" aria-describedby="inputPrecio3Help">
+                    <span id="error-inputPrecio3" class="error" hidden>Debe de ingresar un numero válido</span>
+                  </div>
+                  <div class="col text-center">
+                    <input type="number" id="inputCantidad3" class="form-control text-right" value="1" min="1" onchange="calcular(3)" aria-describedby="inputCantidad3Help">
+                    <span id="error-inputCantidad3" class="error" hidden>Debe de ingresar un numero válido</span>
+                  </div>
+                  <div class="col text-align">
+                    <input disabled type="text" id="inputSubTotal3" class="form-control text-right" value="0" aria-describedby="inputSubTotal3Help">
+                  </div>
+                </div>
+                <div class="row align-items-start mt-2">
+                  <div class="col text-align">
+                    <select id=""select4 class="form-select" aria-label="Default select example">
+                      <option value="1">Producto 1</option>
+                      <option value="2">Producto 2</option>
+                      <option value="3">Producto 3</option>
+                      <option value="4" selected>Producto 4</option>
+                      <option value="5">Producto 5</option>
+                    </select>
+                  </div>
+                  <div class="col text-align">
+                    <input type="number" id="inputPrecio4" class="form-control text-right" value="0" onchange="calcular(4)" aria-describedby="inputPrecio4Help">
+                    <span id="error-inputPrecio4" class="error" hidden>Debe de ingresar un numero válido</span>
+                  </div>
+                  <div class="col text-center">
+                    <input type="number" id="inputCantidad4" class="form-control text-right" value="1" min="1" onchange="calcular(4)" aria-describedby="inputCantidad4Help">
+                    <span id="error-inputCantidad4" class="error" hidden>Debe de ingresar un numero válido</span>
+                  </div>
+                  <div class="col text-align">
+                    <input type="text" disabled id="inputSubTotal4" class="form-control text-right" value="0" aria-describedby="inputSubTotal4Help">
+                  </div>
+                </div>
+                <div class="row align-items-start mt-2">
+                  <div class="col text-align">
+                    <select id=""select5 class="form-select" aria-label="Default select example">
+                      <option value="1">Producto 1</option>
+                      <option value="2">Producto 2</option>
+                      <option value="3">Producto 3</option>
+                      <option value="4">Producto 4</option>
+                      <option value="5" selected>Producto 5</option>
+                    </select>
+                  </div>
+                  <div class="col text-align">
+                    <input type="number" id="inputPrecio5" class="form-control text-right" value="0" onchange="calcular(5)" aria-describedby="inputPrecio5Help">
+                    <span id="error-inputPrecio5" class="error" hidden>Debe de ingresar un numero válido</span>
+                  </div>
+                  <div class="col text-center">
+                    <input type="number" id="inputCantidad5" class="form-control text-right" value="1" min="1" onchange="calcular(5)" aria-describedby="inputCantidad5Help">
+                    <span id="error-inputCantidad5" class="error" hidden>Debe de ingresar un numero válido</span>
+                  </div>
+                  <div class="col text-align">
+                    <input type="text" disabled id="inputSubTotal5" class="form-control text-right" value="0" aria-describedby="inputSubTotal5Help">
+                    <hr>
+                  </div>
+                </div>
+                <div class="row align-items-start mt-2">
+                  <div class="col text-align">
+                  </div>
+                  <div class="col text-align">
+                    <p><b>Sub Total</b></p>
+                  </div>
+                  <div class="col text-center">
+                  </div>
+                  <div class="col text-align">
+                    <input type="text" disabled id="inputSubTotal" class="form-control text-right" value="0" aria-describedby="inputSubTotal5Help">
+                  </div>
+                </div>
+                <div class="row align-items-start mt-2">
+                  <div class="col text-align">
+                  </div>
+                  <div class="col text-align">
+                    <p><b>Descuento</b></p>
+                  </div>
+                  <div class="col text-center">
+                    <input disabled type="text" id="inputDescuento" class="form-control text-right" value="0" min="1" aria-describedby="inputTotalCantidadHelp">
+                  </div>
+                  <div class="col text-align">
+                    <input type="text" disabled id="inputTotalDescuento" class="form-control text-right" value="0" aria-describedby="inputSubTotal5Help">
+                  </div>
+                </div>
+                <div class="row align-items-start  mt-2">
+                  <div class="col text-align">
+                  </div>
+                  <div class="col text-align">
+                    <p><b>Total a pagar</b></p>
+                  </div>
+                  <div class="col text-center">
+                  </div>
+                  <div class="col text-align">
+                    <hr>
+                    <input type="text" disabled id="inputTotal" class="form-control text-right" value="0" aria-describedby="inputTotalHelp">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div> 
+        <p class="card-text"></p>
+        <button class="btn btn-secondary btn-sm" type="button" id="btonLimpiar">&nbsp;&nbsp;Limpiar&nbsp;&nbsp;</button>
+        <button class="btn btn-primary btn-sm" type="button" id="btonCalcular">&nbsp;&nbsp;Calcular&nbsp;&nbsp;</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="/assets/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/assets/js/alertifyjs/alertify.min.js"></script>
+</body>
+
+</html>
