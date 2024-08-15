@@ -31,15 +31,15 @@ function limpiar() {
 }
 
 function calcular(idinput) {
+    
     let precio = parseInt(document.getElementById("inputPrecio" + idinput).value);
     let cantidad = parseInt(document.getElementById("inputCantidad" + idinput).value);
-
+   
     if (document.getElementById("inputPrecio" + idinput).value == "") {
         document.getElementById("error-inputPrecio"+idinput).removeAttribute("hidden");
         showAlert("El precio ingresado es incorrecto, ingresa una cantidad v&aacute;lida");
     } else {
         document.getElementById("error-inputPrecio"+idinput).setAttribute("hidden", "");
-        precio = 0;
     }
 
     if (document.getElementById("inputCantidad" + idinput).value == "") {
@@ -47,10 +47,10 @@ function calcular(idinput) {
         showAlert("El valor ingresado es incorrecto, ingresa una cantidad v&aacute;lida");
     } else {
         document.getElementById("error-inputCantidad"+idinput).setAttribute("hidden", "");
-        cantidad = 0;
     }
 
-    let subtotal = precio * cantidad;
+    let subtotal = parseInt(precio * cantidad);
+  
     document.getElementById("inputSubTotal" + idinput).value = subtotal.toFixed(2);
     totales();
 }
